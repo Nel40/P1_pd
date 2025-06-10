@@ -32,11 +32,13 @@ Serial.println("OFF"); // Enviar mensaje "OFF" por
 puerto serie
 delay(DELAY); // Espera de 500 milisegundos
 }
+```
 Modificación: Acceso Directo a Registros
 Para optimizar el programa, se puede modificar para que acceda directamente a los registros
 de los puertos de entrada y salida de la ESP32, lo que elimina el uso de funciones como
 digitalWrite().
 Código con Acceso Directo a Registros
+```cpp
 #define LED_PIN 2 // Pin del LED
 void setup() {
 uint32_t *gpio_out = (uint32_t *)GPIO_OUT_REG; // Puntero al
